@@ -1,0 +1,53 @@
+{
+  "name": "vue-mcp-server",
+  "version": "0.0.1",
+  "description": "A Vue MCP server exposed as a Vite plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElisePatrikainen/vue-mcp-tests.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vite ./playground",
+    "lint": "eslint . && prettier -c .",
+    "lint:fix": "eslint . --fix && prettier -w .",
+    "test": "pnpm lint && pnpm test:types",
+    "test:types": "vue-tsc"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "vue",
+    "mcp"
+  ],
+  "peerDependencies": {
+    "vite": "^6.0.0 || ^7.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "@vue/devtools-kit": "^7.7.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "eslint": "^10.0.3",
+    "eslint-config-unjs": "^0.6.2",
+    "prettier": "^3.8.1",
+    "typescript": "^5.7.0",
+    "unbuild": "^3.6.1",
+    "vite": "^7.3.1",
+    "vue-tsc": "^3.2.5"
+  }
+}
